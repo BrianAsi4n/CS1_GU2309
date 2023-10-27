@@ -20,7 +20,7 @@ namespace MineSweeper
             int MAP_HEIGHT = map.GetLength(0);
             int MAP_WIDTH = map.GetLength(1);
             string[,] mapReport = new string[MAP_HEIGHT, MAP_WIDTH];
-            string[,] mapReport = new string[MAP_HEIGHT, MAP_WIDTH];
+            
             for (int yOrdinate = 0; yOrdinate < MAP_HEIGHT; yOrdinate++)
             {
                 for (int xOrdinate = 0; xOrdinate < map.GetLength(1); xOrdinate++)
