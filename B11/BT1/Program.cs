@@ -12,19 +12,20 @@ namespace BT1
         {
             Console.WriteLine("Nhap kich thuoc ma tran vuong:");
                 int n = int.Parse(Console.ReadLine());
-            double[,] matrix = new double[n, n];
+            List<List<double>> matrix = new List<List<double>>();
             for(int i = 0; i<n; i++)
             {
+                matrix.Add(new List<double>());
                 for(int j = 0; j <n; j++)
                 {
                     Console.Write($"nhap gia tri cho phan tu [{i},{j}]");
-                    matrix[i, j] = double.Parse(Console.ReadLine());
+                    matrix[i].Add(double.Parse(Console.ReadLine()));
                 }
             }
             double sum = 0;
             for (int i =0; i <n; i++)
             {
-                sum += matrix[i, i];
+                sum += matrix[i][i] ;
             }
             Console.WriteLine($"tong cac phan tu o duong cheo chinh {sum}");
         }

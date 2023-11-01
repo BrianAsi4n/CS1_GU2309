@@ -1,0 +1,7 @@
+D:\C#codegym\CS1_GU2309\B13\CGO13\CGO13\bin\Debug\CGO13.exe.config
+D:\C#codegym\CS1_GU2309\B13\CGO13\CGO13\bin\Debug\CGO13.exe
+D:\C#codegym\CS1_GU2309\B13\CGO13\CGO13\bin\Debug\CGO13.pdb
+D:\C#codegym\CS1_GU2309\B13\CGO13\CGO13\obj\Debug\CGO13.csproj.AssemblyReference.cache
+D:\C#codegym\CS1_GU2309\B13\CGO13\CGO13\obj\Debug\CGO13.csproj.CoreCompileInputs.cache
+D:\C#codegym\CS1_GU2309\B13\CGO13\CGO13\obj\Debug\CGO13.exe
+D:\C#codegym\CS1_GU2309\B13\CGO13\CGO13\obj\Debug\CGO13.pdb

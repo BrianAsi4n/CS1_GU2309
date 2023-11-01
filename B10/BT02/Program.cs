@@ -10,41 +10,24 @@ namespace BT02
     {
         static void Main(string[] args)
         {
-            Console.Write("Nhập số hàng của ma trận: ");
-            int rows = int.Parse(Console.ReadLine());
-
-            Console.Write("Nhập số cột của ma trận: ");
-            int cols = int.Parse(Console.ReadLine());
-
-            double[,] matrix = new double[rows, cols];
-
-            for (int i = 0; i < rows; i++)
+            List<double> matrix = new List<double>();
+            Console.WriteLine("nhap vao cac phan tu:");
+            while (true)
             {
-                for (int j = 0; j < cols; j++)
+                string input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
                 {
-                    Console.Write($"Nhập giá trị cho phần tử [{i}, {j}]: ");
-                    matrix[i, j] = double.Parse(Console.ReadLine());
+                    break;
                 }
+                double number = double.Parse(input);
+                matrix.Add(number);
             }
 
-            double max = matrix[0, 0];
-            int row = 0;
-            int col = 0;
+            double max = matrix.Max();
+            int index = matrix.IndexOf(max);
 
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    if (matrix[i, j] > max)
-                    {
-                        max = matrix[i, j];
-                        row = i;
-                        col = j;
-                    }
-                }
-            }
+            Console.WriteLine($"gia tri lon nhat {max} tai vi tri {index}");
 
-            Console.WriteLine($"Giá trị lớn nhất trong ma trận là {max} tại tọa độ [{row}, {col}].");
         }
     }
     

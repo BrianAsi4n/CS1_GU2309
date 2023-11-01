@@ -10,8 +10,9 @@ namespace TH02
     {
         static void Main(string[] args)
         {
+            /*
             string[] students = { "Christian", "Michael", "Camila", "Sienna", "Tanya", "Connor", "Zachariah", "Mallory", "Zoe", "Emily" };
-            Console.WriteLine("nhap ten vao:");
+            Console.WriteLine("nhap ten can tim vao:");
             string input = Console.ReadLine();
             bool isExist = false;
             for (int i = 0; i < students.Length; i++)
@@ -26,6 +27,20 @@ namespace TH02
             if (!isExist)
             {
                 Console.WriteLine("Not found" + input + " in the list.");
+            }*/
+
+           
+            List<string> sinhVien = new List<string>() { "Christian", "Michael", "Camila", "Sienna", "Tanya", "Connor", "Zachariah", "Mallory", "Zoe", "Emily" };
+            Console.WriteLine("nhap ten vao ");
+            string tenSinhVien = Console.ReadLine();
+            int viTri = sinhVien.IndexOf(tenSinhVien);
+            if (viTri == -1)
+            {
+                Console.WriteLine("Không tìm thấy sinh viên có tên {0} trong danh sách.", tenSinhVien);
+            }
+            else
+            {
+                Console.WriteLine("Vị trí của sinh viên {0} trong danh sách là {1}.", tenSinhVien, viTri);
             }
         }
     }
