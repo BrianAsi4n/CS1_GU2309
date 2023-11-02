@@ -8,34 +8,27 @@ namespace CGO13
 {
     internal class Program
     {
-        static int UCLN(int a,int b)
+        public static void Swap(int n1, int n2)
         {
-            while (a*b!= 0)
-            {
-                if (a > b) a %= b;
-                else b %= a;
-            }
-            return a + b;
+            Console.WriteLine("\t Inside the swap method");
+            Console.WriteLine("\t\t before swapping, n1 is" + n1 + "and n2 is" + n2);
+
+            int temp = n1;
+            n1 = n2;
+            n2 = temp;
+
+            Console.WriteLine("\t\t After swapping, nq is " + n1 + "and n2 is" + n2);
+
         }
-        static int gcd(int a,int b)
-        {
-            if (b == 0) return a;
-            return gcd(b, a % b);
-        }
-        static int Fibonacci(int n)
-        {
-            if (n <= 1) return 1;
-            return Fibonacci(n - 1) + Fibonacci(n - 2);
-            
-        }
-        static int dayso(int n)
-        {
-            if (n == 1) return -2;
-            return 3 * dayso(n - 1) - 1;
-        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine(Fibonacci(6));
+            int num1 = 1;
+            int num2 = 2;
+            Console.WriteLine("Before invoking the swap method, num1 is" + num1 + "and num2 is " + num2);
+            Swap(num1, num2);
+            Console.WriteLine("after invoking the swap method, num1 is " + num1 + " and num2 is" + num2);
         }
+    }
     } 
-}
+
