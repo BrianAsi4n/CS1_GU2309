@@ -1,2 +1,7 @@
 D:\C#codegym\CS1_GU2309\B14\ticTacToeGame\ticTacToeGame\obj\Debug\ticTacToeGame.csproj.AssemblyReference.cache
 D:\C#codegym\CS1_GU2309\B14\ticTacToeGame\ticTacToeGame\obj\Debug\ticTacToeGame.csproj.CoreCompileInputs.cache
+D:\C#codegym\CS1_GU2309\B14\ticTacToeGame\ticTacToeGame\bin\Debug\ticTacToeGame.exe.config
+D:\C#codegym\CS1_GU2309\B14\ticTacToeGame\ticTacToeGame\bin\Debug\ticTacToeGame.exe
+D:\C#codegym\CS1_GU2309\B14\ticTacToeGame\ticTacToeGame\bin\Debug\ticTacToeGame.pdb
+D:\C#codegym\CS1_GU2309\B14\ticTacToeGame\ticTacToeGame\obj\Debug\ticTacToeGame.exe
+D:\C#codegym\CS1_GU2309\B14\ticTacToeGame\ticTacToeGame\obj\Debug\ticTacToeGame.pdb

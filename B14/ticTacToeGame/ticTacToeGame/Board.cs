@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ticTacToeGame
 {
-    class Board
+    public class Board
     {
         public const int BOARD_SIZE = 3;    //kích thước bàn cờ là 3 x 3 ô cờ
         public Cell[,] board;               // bàn cờ 9 ô
@@ -29,7 +29,7 @@ namespace ticTacToeGame
             /*******
              *1*2*3*
              *******
-             *4*X*6*
+             *4*X*X*
              *******
              *7*O*9*
              *******/
@@ -39,7 +39,10 @@ namespace ticTacToeGame
                 for (int j = 0; j < BOARD_SIZE; j++)
                 {
                     if (board[i, j].isEmpty())
+                    {
                         Console.Write(fieldNumber);
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
                     else
                     {
                         char c = (char)board[i, j].FieldState;
@@ -48,6 +51,7 @@ namespace ticTacToeGame
                         else
                             Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write(c);
+                        Console.ForegroundColor = ConsoleColor.Blue;
                     }
                     fieldNumber++; //tăng giá trị ở ô hiển thị
                     if (j < BOARD_SIZE - 1) Console.Write("*");
@@ -77,5 +81,6 @@ namespace ticTacToeGame
             Console.Clear();
         }
     }
+
 
 }

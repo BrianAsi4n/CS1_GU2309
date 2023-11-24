@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace ticTacToeGame
 {
 
+    //Xác định giá trị từng ô cờ [null, X, O]
     public enum FIELD { FLD_EMPTY = ' ', FLD_X = 'X', FLD_O = 'O' }
     public class Cell
     {

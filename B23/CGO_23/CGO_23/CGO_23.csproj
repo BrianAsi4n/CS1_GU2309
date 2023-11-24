@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB0FE2A3-E1F3-4568-B8A4-EBF5E787FBAD}</ProjectGuid>
+    <ProjectGuid>{AA90F28A-B538-413D-96CB-CA1783F607BB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ticTacToeGame</RootNamespace>
-    <AssemblyName>ticTacToeGame</AssemblyName>
+    <RootNamespace>CGO_23</RootNamespace>
+    <AssemblyName>CGO_23</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Board.cs" />
-    <Compile Include="Cell.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Robot.cs" />
-    <Compile Include="TicTacToe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,54 +6,125 @@ using System.Threading.Tasks;
 
 namespace ticTacToeGame
 {
-    internal class TicTacToe
+    class TicTacToe
     {
-      public TicTacToe() { }
-        public void play()
+        public TicTacToe()
         {
-            int moveCounter = 0;
+
+        }
+
+        public void play2()
+        {
+            int moveCounter = 0;    //xác định người chơi chẵn= player1 / lẻ= player2
             Board gameBoard = new Board();
             Player playerX = new Player('X');
-            Player playerY = new Player('Y');
-
-            Player currentPlayer = playerX;
-            bool play = true;
-                while (play)
+            Player playerO = new Player('O');
+            Player currentPlayer = playerX; //xác định lượt chơi đầu tiên
+            bool play = true;           //thiết menu số 1-9 chơi
+            while (play)
             {
-                gameBoard.printBoard();
-                Console.WriteLine("player {0} enter the field in which you want to put the number",currentPlayer);
+                gameBoard.printBoard();     //in bàn cờ
+                Console.WriteLine("Player {0} enter the field in which you want to put the number:", currentPlayer.Sign);    //chờ ng dùng nhập dữ liệu
+            getTurn:
                 try
                 {
-                    int turn = currentPlayer.takeTurn();
-                  if(! gameBoard.putMark(currentPlayer.Sign, turn))
+                    //xác định lượt và số number
+                    int turn = currentPlayer.takeTurn();    //nhập dữ liệu
+                    if (!gameBoard.putMark(currentPlayer.Sign, turn))
+                    {
                         xulySai();
-                  gameBoard.clearBoard();
-                    moveCounter++;
-                    if(currentPlayer.checkRowsForWin(gameBoard) )
-                    {
-                        Console.WriteLine("player {0} win!",currentPlayer.Sign);
-                        gameBoard.printBoard();
-                        play = false;
+                        goto getTurn;
                     }
-                    else if(moveCounter == 9)
+                    else
                     {
-                        Console.WriteLine("draw!");
-                        gameBoard.printBoard();
-                        play = false;
+                        gameBoard.clearBoard();
+                        moveCounter++;  //tối đa lên tới 9
+                        //kiểm tra đã thắng chưa
+                        if (currentPlayer.checkWin(gameBoard))
+                        {
+                            Console.WriteLine("Player {0} won!", currentPlayer.Sign);
+                            gameBoard.printBoard();
+                            play = false;
+                        }
+                        //kiểm tra có hòa chưa
+                        else if (moveCounter == 9)
+                        {
+                            Console.WriteLine("Draw!");
+                            gameBoard.printBoard();
+                            play = false;
+                        }
+                        //ko thắng , ko hòa -> đi tiếp
+                        currentPlayer = (moveCounter % 2 == 0) ? playerX : playerO;
                     }
-                    currentPlayer = (moveCounter % 2 == 0) ? 
-                }catch(Exception e)
+                }
+                catch (Exception ex)
                 {
                     xulySai();
+                    goto getTurn;
                 }
             }
         }
-        public void xulySai()
+        public void play()
         {
-            Console.WriteLine("invalid input");
-            Console.ReadLine();
-            Console.Clear();
+            int moveCounter = 0;    //xác định người chơi chẵn= player1 / lẻ= player2
+            Board gameBoard = new Board();
+            Player playerX = new Player('X');
+            Robot playerO = new Robot('O'); //## //Player playerO = new Player('O');
+            Player currentPlayer = playerX; //xác định lượt chơi đầu tiên
+            bool play = true;           //thiết menu số 1-9 chơi
+            while (play)
+            {
+                gameBoard.printBoard();     //in bàn cờ
+                Console.WriteLine("Player {0} enter the field in which you want to put the number:", currentPlayer.Sign);    //chờ ng dùng nhập dữ liệu
+            getTurn:
+                try
+                {
+                    //xác định lượt và số number
+                    //int turn = currentPlayer.takeTurn();    //nhập dữ liệu
+                    int turn = (moveCounter % 2 == 0) ? playerX.takeTurn() : playerO.takeTurn(); //##
+                    char c = (moveCounter % 2 == 0) ? playerX.Sign : playerO.Sign;               //##
+                    //if (!gameBoard.putMark(currentPlayer.Sign, turn))
+                    if (!gameBoard.putMark(c, turn)) //##
+                    {
+                        xulySai();
+                        goto getTurn;
+                    }
+                    else
+                    {
+                        playerO.removeChoose(turn); //##
+                        gameBoard.clearBoard();
+                        moveCounter++;  //tối đa lên tới 9
+                        //kiểm tra đã thắng chưa
+                        if (currentPlayer.checkWin(gameBoard))
+                        {
+                            Console.WriteLine("Player {0} won!", currentPlayer.Sign);
+                            gameBoard.printBoard();
+                            play = false;
+                        }
+                        //kiểm tra có hòa chưa
+                        else if (moveCounter == 9)
+                        {
+                            Console.WriteLine("Draw!");
+                            gameBoard.printBoard();
+                            play = false;
+                        }
+                        //ko thắng , ko hòa -> đi tiếp
+                        currentPlayer = (moveCounter % 2 == 0) ? playerX : playerO;
+                    }
+                }
+                catch (Exception ex)    //Bẫy lỗi tổng quát: RUN lên mới biết
+                {
+                    Console.WriteLine(ex.Message);
+                    xulySai();      //ném lỗi throw exception <custom exception>
+                    goto getTurn;
+                }
+            }
+        }
+
+        private void xulySai()  //throw new exception
+        {
+            Console.WriteLine("Invalid input. Please enter number between 1- 9!");
         }
     }
-   
+
 }
